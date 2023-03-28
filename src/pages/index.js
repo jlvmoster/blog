@@ -1,128 +1,74 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from 'react';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
+const HomePage = () => (
   <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
+    <div className='relative overflow-hidden bg-white'>
+      <div className='hidden sm:absolute sm:inset-y-0 sm:block sm:h-full sm:w-full' aria-hidden='true'>
+        <div className='relative mx-auto h-full max-w-7xl'>
+          <svg
+            className='absolute right-full translate-y-1/4 translate-x-1/4 transform lg:translate-x-1/2'
+            width={404}
+            height={784}
+            fill='none'
+            viewBox='0 0 404 784'
           >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+            <defs>
+              <pattern
+                id='f210dbf6-a58d-4871-961e-36d5016a0f49'
+                x={0}
+                y={0}
+                width={20}
+                height={20}
+                patternUnits='userSpaceOnUse'
+              >
+                <rect x={0} y={0} width={4} height={4} className='text-gray-200' fill='currentColor' />
+              </pattern>
+            </defs>
+            <rect width={404} height={784} fill='url(#f210dbf6-a58d-4871-961e-36d5016a0f49)' />
+          </svg>
+          <svg
+            className='absolute left-full -translate-y-3/4 -translate-x-1/4 transform md:-translate-y-1/2 lg:-translate-x-1/2'
+            width={404}
+            height={784}
+            fill='none'
+            viewBox='0 0 404 784'
+          >
+            <defs>
+              <pattern
+                id='5d0dd344-b041-4d26-bec4-8d33ea57ec9b'
+                x={0}
+                y={0}
+                width={20}
+                height={20}
+                patternUnits='userSpaceOnUse'
+              >
+                <rect x={0} y={0} width={4} height={4} className='text-gray-200' fill='currentColor' />
+              </pattern>
+            </defs>
+            <rect width={404} height={784} fill='url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)' />
+          </svg>
+        </div>
+      </div>
+      <div className='relative pt-6 pb-16 sm:pb-24'>
+        <main className='mx-auto mt-16 max-w-7xl px-4 sm:mt-24'>
+          <div className='text-center'>
+            <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl'>
+              <span className='block xl:inline'>moster.dev blog</span>{' '}
+              <span className='block text-indigo-600 xl:inline'>coming soon</span>
+            </h1>
+            <p className='mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
   </Layout>
-)
+);
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+export default HomePage;
 
-export default IndexPage
+export const Head = () => <SEO title='Home' />;

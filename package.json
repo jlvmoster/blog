@@ -2,9 +2,6 @@
   "name": "blog",
   "private": true,
   "description": "My personal blog",
-  "engines": {
-    "node": "18.x"
-  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -26,23 +23,32 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-react-app": "^7.0.1",
+    "gatsby-plugin-netlify": "^5.1.0",
+    "gatsby-plugin-postcss": "^6.8.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
-    "prettier": "^2.8.7"
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
+    "tailwindcss": "^3.2.7"
   },
   "eslintConfig": {
     "globals": {
       "__PATH_PREFIX__": true
     },
-    "extends": ["react-app", "prettier"],
+    "extends": [
+      "react-app",
+      "prettier"
+    ],
     "rules": {
       "react/jsx-pascal-case": "off"
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js}": [
       "eslint --fix",
       "prettier --write"
     ],
