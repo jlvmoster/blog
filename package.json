@@ -2,7 +2,6 @@
   "name": "blog",
   "private": true,
   "description": "My personal blog",
-  "version": "0.0.1",
   "engines": {
     "node": "18.x"
   },
@@ -13,7 +12,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "prepare": "husky install"
   },
   "dependencies": {
     "gatsby": "^5.8.0",
@@ -26,6 +26,28 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "prettier": "^2.8.4"
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-react-app": "^7.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7"
+  },
+  "eslintConfig": {
+    "globals": {
+      "__PATH_PREFIX__": true
+    },
+    "extends": ["react-app", "prettier"],
+    "rules": {
+      "react/jsx-pascal-case": "off"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{html,css,md,json,yaml,yml}": [
+      "prettier --write"
+    ]
   }
 }
