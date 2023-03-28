@@ -30,6 +30,6 @@ const NotFoundPage = () => (
   </div>
 );
 
-export default NotFoundPage;
-
 export const Head = ({ location }) => <SEO title='Not Found' pathname={location.pathname} />;
+
+export default NotFoundPage;

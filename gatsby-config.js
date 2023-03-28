@@ -14,6 +14,10 @@ module.exports = {
     image: `/icon.png`,
     siteUrl: `https://blog.moster.dev`,
     twitterUsername: `@jlvmoster`,
+    headerLinks: [
+      { name: `Home`, path: `/` },
+      { name: `Blog`, path: `/blog` },
+    ],
   },
   plugins: [
     `gatsby-plugin-netlify`,
@@ -26,8 +30,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
