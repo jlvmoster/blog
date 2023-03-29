@@ -8,7 +8,12 @@ const Home = ({ location }) => (
   <Layout pathname={location.pathname}>
     <section className='max-w-3xl mx-auto py-16 sm:max-w-5xl sm:py-24 lg:max-w-7xl'>
       <div className='mx-auto w-48 h-48 relative overflow-hidden rounded-full sm:w-64 sm:h-64'>
-        <StaticImage src='../images/me.png' alt='Picture of the author' layout='constrained' />
+        <StaticImage
+          src='../images/me.png'
+          alt='Picture of the author'
+          formats={['auto', 'webp']}
+          layout='constrained'
+        />
       </div>
       <div className='mt-6 text-center'>
         <h1 className='text-3xl text-white font-bold tracking-wide sm:text-5xl'>Hi, I&apos;m Jalo &#x1f44b;</h1>
