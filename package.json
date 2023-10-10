@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "run-p dev:*",
+    "build": "run-s build:*",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "tailwindcss -i src/globals.css -o _site/globals.css --watch --postcss",
+    "build:11ty": "cross-env NODE_ENV=production eleventy",
+    "build:css": "cross-env NODE_ENV=production tailwindcss -i src/globals.css -o _site/globals.css --postcss",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
+    "cssnano": "^6.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.5",
+    "tailwindcss": "^3.3.3"
+  },
+  "lint-staged": {
+    "*.{html,css,json,yml,yaml,md}": [
+      "prettier --write"
+    ]
+  }
+}
