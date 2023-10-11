@@ -1,11 +1,13 @@
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Jalo's developer blog" />
-    <link rel="stylesheet" type="text/css" href="/globals.css" />
-    <title>{{ title }}</title>
+    <meta
+      name="description"
+      content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}"
+    />
+    <link rel="stylesheet" href="/globals.css" />
+    <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
   </head>
   <body>
     {{ content | safe }}
